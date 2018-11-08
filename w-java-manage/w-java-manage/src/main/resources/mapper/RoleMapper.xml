@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+
+<mapper namespace="com.winterchen.dao.RoleDao">
+
+    <insert id="insert" parameterType="com.winterchen.model.RoleDomain">
+        insert into w_role(id,openid,avatarUrl,nickName,role,team)
+        values (#{id},#{openid},#{avatarUrl},#{nickName},#{role},#{team})
+    </insert>
+
+    <update id="update" parameterType="com.winterchen.model.RoleDomain">
+        update w_role set
+        <if test="role!=null">
+            role =#{role}
+        </if>
+        ,team =#{team}
+        <!--<if test="team!=null">-->
+            <!---->
+        <!--</if>-->
+        where openid = #{openid}
+
+    </update>
+
+    <!--手机号更新-->
+
+    <update id="updatePhone" parameterType="com.winterchen.model.RoleDomain">
+        update w_role set
+          phone =#{phone}
+
+        where openid = #{openid}
+    </update>
+
+    <select id="selectAll" resultType="com.winterchen.model.RoleDomain">
+
+        SELECT
+        *
+        FROM
+        w_role
+        where 1=1
+        <if test="nickName != null and nickName != ''">
+            AND nickName like #{nickName}
+        </if>
+        <if test="role != null and role != ''">
+            AND role like #{role}
+        </if>
+        <if test="openid != null and openid != ''">
+            AND openid = #{openid}
+        </if>
+
+
+    </select>
+
+    <select id="ifHaveSame" resultType="com.winterchen.model.RoleDomain">
+        select * from w_role  where role = 4 and team = #{team}
+    </select>
+
+    <!--获取老师-->
+    <select id="teacherList" resultType="com.winterchen.model.RoleDomain">
+        select * from w_role  where role = 3 and team = #{team}
+    </select>
+
+    <!--根据openid获取用户信息-->
+    <select id="getInfo" resultType="com.winterchen.model.RoleDomain">
+        select * from w_role  where openid = #{openid}
+    </select>
+
+<!--余额提现-->
+    <update id="updateMoney" parameterType="com.winterchen.model.RoleDomain">
+        update w_role set
+          balance = 0
+
+        where openid = #{openid}
+    </update>
+
+    <update id="updateBlance" parameterType="com.winterchen.model.RoleDomain">
+        update w_role set
+        balance = balance + #{blance},
+        integral = integral + #{integral}
+        where openid = #{openid}
+    </update>
+</mapper>

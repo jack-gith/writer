@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+
+<mapper namespace="com.winterchen.dao.OrderManageDao">
+
+
+    <select id="select" resultType="com.winterchen.model.dto.OrderManageDto">
+    select woi.orderId,woi.total_money as totalMoney,woi.creat_time as creatTime,woi.evaluate,  woi.subject, woi.status,  woi.openId,woi.email,woi.team,woi.title, woi.art_type as artType ,woi.user_upload_status as userUploadStatus,woi.teacher_upload_status as teacherUploadStatus,wr.nickName,wr.role,wl.nickName superName    from w_order_info woi
+    left join w_role wr on wr.openId = woi.openId
+    left join w_role wl on wl.team = woi.team and wl.role = 4
+
+    where 1 = 1
+    <if test="status != -1">
+        AND woi.status like #{status}
+    </if>
+    <if test="userUploadStatus != -1">
+        AND woi.user_upload_status  like #{userUploadStatus}
+    </if>
+
+    <if test="teacherUploadStatus != -1">
+        AND woi.teacher_upload_status  like #{teacherUploadStatus}
+    </if>
+
+    <if test="role != null and role != ''">
+        AND  wl.role like #{role}
+    </if>
+
+    <if test="orderID != null and orderID != ''">
+        AND  woi.orderId like #{orderID}
+    </if>
+
+    <!--<if test="openid != null and openid != ''">-->
+    <!--AND  woi.openid = #{openid}-->
+    <!--</if>-->
+
+    <if test="nickName != null and nickName != ''">
+        AND  wr.nickName like #{nickName}
+    </if>
+
+    and status not in(7)
+
+
+</select>
+
+
+    <select id="select7" resultType="com.winterchen.model.dto.OrderManageDto">
+        select woi.orderId,woi.total_money as totalMoney,woi.creat_time as creatTime,woi.evaluate,woi.thasfp,  woi.subject, woi.status,  woi.openId,woi.email,woi.team,woi.title, woi.art_type as artType ,woi.user_upload_status as userUploadStatus,woi.teacher_upload_status as teacherUploadStatus,wr.nickName,wr.role,wl.nickName superName    from w_order_info woi
+        left join w_role wr on wr.openId = woi.openId
+        left join w_role wl on wl.team = woi.team and wl.role = 4
+
+        where order_pool = 1
+
+    </select>
+
+    <!--获取老师的信息-->
+    <select id="getTeacherInfo" resultType="com.winterchen.model.dto.OrderManageDto">
+        select count(woi.fpopenid) as fpNum,sum(woi.total_money) as totalMoney,wr.avatarUrl,wr.nickName from w_order_info woi
+        left join w_role wr on wr.openid = woi.fpopenid
+        where fpopenid = #{openid}
+    </select>
+
+</mapper>

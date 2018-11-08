@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper  namespace="com.winterchen.dao.OrderPxDao">
+    <insert id="insert" parameterType="com.winterchen.model.OrderPxDomain">
+        insert into w_order_evaluate (id,orderID,score,content)
+        values (#{id},#{orderID},#{score},#{content})
+    </insert>
+</mapper>

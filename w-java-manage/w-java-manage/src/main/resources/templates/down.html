@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户下载</title>
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+</head>
+<body>
+<div>
+    <!--<form  enctype="multipart/form-data" id="form1">-->
+        <!--<p>-->
+            <!--文件1：<input type="file" id="file1" name="file"/>-->
+            <!--<input type="button" id="upload" value="上传"/>-->
+        <!--</p>-->
+    <!--</form>-->
+    <!--<input type="button" id="down" value="全部下载">-->
+    <h3>点击文件名进行下载</h3>
+    <div>
+        <ul id="ul">
+         <li></li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+
+
+
+
+function downloadFile(fileName, content){
+    var aLink = document.createElement('a')
+        , blob = new Blob([content])
+        , evt = document.createEvent("HTMLEvents");
+
+    evt.initEvent("click");
+
+    aLink.download = fileName;
+    aLink.href = URL.createObjectURL(blob);
+    aLink.dispatchEvent(evt);
+}
+
+
+    $("#down").click(function () {
+        $.ajax({
+            url:"http://localhost:8099/uploads/userDownLoad",
+            type:'post',
+            data:{
+                orderID:getQueryString('orderID')
+            },
+            success:function (res) {
+                var list = res.data
+                console.log(list)
+                //var html = '';
+                for(var i=0;i<list.length;i++){
+                    // a.split("/")[a.split("/").length-1]
+
+                    downloadFile(list[i].file.split("/")[list[i].file.split("/").length-1],list[i].file)
+                    //html+='<li><a href="'+list[i].file+'" download="'+list[i].file.split("/")[list[i].file.split("/").length-1]+'">'+list[i].file.split("/")[list[i].file.split("/").length-1]+'</a></li>'
+                }
+
+                // $("#ul").html(html);
+
+            }
+        })
+
+
+    })
+    $.ajax({
+        url:"http://localhost:8099/uploads/userDownLoad",
+        type:'post',
+        data:{
+            orderID:getQueryString('orderID')
+        },
+        success:function (res) {
+            var list = res.data
+            console.log(list)
+            var html = '';
+            for(var i=0;i<list.length;i++){
+                // a.split("/")[a.split("/").length-1]
+                html+='<li><a href="'+list[i].file+'" download="'+list[i].file.split("/")[list[i].file.split("/").length-1]+'">'+list[i].file.split("/")[list[i].file.split("/").length-1]+'</a></li>'
+            }
+
+            $("#ul").html(html);
+
+        }
+    })
+
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        var q = window.location.pathname.substr(1).match(reg_rewrite);
+        if(r != null){
+            return unescape(r[2]);
+        }else if(q != null){
+            return unescape(q[2]);
+        }else{
+            return null;
+        }
+    }
+
+</script>
+
+</body>
+</html>

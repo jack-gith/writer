@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+
+<mapper namespace="com.winterchen.dao.OrderDetailDao">
+
+
+    <!--left join w_user_files  uf on woi.orderID = uf.orderID-->
+    <!--&#45;&#45;         left join w_teacher_files tf on woi.orderID = tf.orderID-->
+    <select id="show" resultType="com.winterchen.model.dto.OrderDetailDto">
+        select woi.orderID,woi.status,woi.title,woi.art_len as artLen,woi.finish_time as finishTime,woi.direct,woi.style,woi.email,woi.user_upload_status as userUploadStatus, wr.nickName,wr.phone,wr.role,wl.nickName as superName,wl.phone as superPhone,wp.nickName as zjName,wp.phone as zjPhone   from w_order_info woi
+        left join w_role wr on wr.openid = woi.openid
+        left join w_role wl on wl.openid = woi.fpopenid
+        left join w_role wp on wp.team = woi.team and wp.role = 4
+
+
+
+
+
+        where 1 = 1
+
+
+        <if test="orderID != null and orderID != ''">
+            AND  woi.orderID = #{orderID}
+        </if>
+
+
+    </select>
+</mapper>

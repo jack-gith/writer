@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+
+<mapper namespace="com.winterchen.dao.OrderInfoDao">
+
+    <resultMap id="ResultMapForProscen" type="com.winterchen.model.OrderInfoDomain">
+        <result column="art_type" property="artType"/>
+        <result column="art_len" property="artLen"/>
+        <result column="finish_time" property="finishTime"/>
+        <result column="total_money" property="totalMoney"/>
+        <result column="creat_time" property="creatTime"/>
+    </resultMap>
+
+    <insert id="insertData" parameterType="com.winterchen.model.OrderInfoDomain">
+        insert into w_order_info(id,orderID,email,art_type,subject,art_len,finish_time,team,title,direct,style,total_money,status,creat_time,openid,integral  )
+        values (#{id},#{orderID},#{email},#{artType},#{subject},#{artLen},#{finishTime},#{team},#{title},#{direct},#{style},#{totalMoney},#{status},#{creatTime},#{openid},#{integral})
+    </insert>
+    <!--id,orderID,email,art_type ,subject,art_len ,finish_time ,team,title,direct,style,total_money ,status,creat_time ,openid-->
+
+
+    <select id="findOne" resultMap="ResultMapForProscen" >
+        select
+         *
+        from w_order_info where openid = #{openid} and creat_time = #{creatTime}
+    </select>
+
+    <!--查看详情-->
+    <select id="orderDetail" resultMap="ResultMapForProscen" >
+        select
+         *
+        from w_order_info where orderID = #{orderID}
+    </select>
+
+    <!--获取用户和代理的订单-->
+    <select id="getAllOrderList" resultMap="ResultMapForProscen" >
+        select
+         *
+        from w_order_info where 1=1
+        <if test="status != -1">
+           and status = #{status}
+        </if>
+        <if test="openid != null and openid != ''">
+            AND  openid = #{openid}
+        </if>
+        <if test="team != null and team != ''">
+            AND  team = #{team}
+        </if>
+        <if test="thasfp ==1">
+            AND  thasfp = #{thasfp}
+        </if>
+        <if test="fpopenid != null and fpopenid != ''">
+            AND  fpopenid = #{fpopenid}
+        </if>
+
+
+    </select>
+
+
+
+    <!--抢单-->
+    <update id="robOrder" parameterType="com.winterchen.model.OrderInfoDomain">
+        update w_order_info set
+        <if test="orderID!=null">status = 2</if>
+        <if test="team!=null">, team = #{team}</if>
+        where orderID = #{orderID}
+    </update>
+
+    <!--取消，关闭订单-->
+    <update id="closeOrder" parameterType="com.winterchen.model.OrderInfoDomain">
+        update w_order_info set
+        <if test="orderID!=null">status = 6</if>
+        where orderID = #{orderID}
+    </update>
+
+    <!--分配老师-->
+    <update id="fpTeacher" parameterType="com.winterchen.model.OrderInfoDomain">
+        update w_order_info set thasfp = 1 , status = 3
+        <if test="fpopenid!=null"> , fpopenid =  #{fpopenid}</if>
+
+        where orderID = #{orderID}
+    </update>
+
+    <!--修改-->
+    <update id="updatEvaluate" parameterType="com.winterchen.model.OrderInfoDomain">
+        update w_order_info set evaluate = 1
+
+        where orderID = #{orderID}
+    </update>
+
+
+    <update id="returnOrder" parameterType="com.winterchen.model.OrderInfoDomain">
+        update w_order_info set team = "",integral=integral/2
+        <if test="orderID!=null">,status = #{status}</if>
+        <if test="orderPool!=0">,order_pool = #{orderPool}</if>
+        where orderID = #{orderID}
+
+
+    </update>
+
+    <!--统计-->
+    <select id="getStatus" resultType="int">
+        select count(*) from w_order_info
+        where team = #{team} and status=#{status}
+    </select>
+
+    <!--统计-->
+    <select id="getStatus7" resultType="int">
+        select count(*) from w_order_info where status = 7
+    </select>
+
+
+    <!--获取同一个团队下的老师-->
+    <select id="getTeacher" resultType="com.winterchen.model.RoleDomain">
+        select * from w_role
+        where team = #{team} and role = 3
+    </select>
+
+
+    <!--获取用户的所有订单量和金额-->
+
+    <select id="user_num" resultType="int">
+        select count(*) from w_order_info where  openid = #{openid}
+    </select>
+    <select id="user_money" resultType="int">
+        select sum(total_money) from w_order_info where  openid = #{openid}
+    </select>
+
+    <!--获取代理的积分-->
+    <select id="getIntegral" resultType="int">
+        select sum(integral) from w_order_info where  openid = #{openid} and status = 5
+    </select>
+
+
+    <!--获取老师和和总监的总收入-->
+    <select id="getMoney" resultType="int">
+      select sum(total_money) from w_order_info where  openid = #{openid} and status = 5
+    </select>
+
+    <!--验收-->
+    <update id="confirmOrder" parameterType="com.winterchen.model.OrderInfoDomain">
+        update w_order_info set
+        <if test="orderID!=null">status = 5</if>
+        where orderID = #{orderID} and openid = #{openid}
+    </update>
+
+
+
+
+
+
+
+
+
+</mapper>

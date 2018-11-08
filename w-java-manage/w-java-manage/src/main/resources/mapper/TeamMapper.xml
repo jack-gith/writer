@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+
+<mapper namespace="com.winterchen.dao.TeamDao">
+
+    <insert id="insert" parameterType="com.winterchen.model.TeamDomain">
+        insert into w_team(id,team1,team2,team3,team4,team5,team6)
+        values (#{id},#{team1},#{team2},#{team3},#{team4},#{team5},#{team6})
+    </insert>
+
+    <update id="update" parameterType="com.winterchen.model.TeamDomain">
+        update w_team set
+
+        <if test="team1!=null">team1 =#{team1},</if>
+        <if test="team2!=null">team2 =#{team2},</if>
+        <if test="team3!=null">team3 =#{team3},</if>
+        <if test="team4!=null">team4 =#{team4},</if>
+        <if test="team5!=null">team5 =#{team5},</if>
+        <if test="team6!=null">team6 =#{team6}</if>
+        where id = #{id}
+
+    </update>
+
+    <select id="showData" resultType="com.winterchen.model.TeamDomain">
+
+        SELECT
+        *
+        FROM
+        w_team
+
+
+    </select>
+
+    <!--获取数据字典-->
+    <select id="dict_show" resultType="com.winterchen.model.DictDomain">
+        select * from w_dict where 1=1
+        <if test="code!=null"> and code = #{code}</if>
+
+    </select>
+
+    <select id="searchTeacher" resultType="com.winterchen.model.dto.UserDto">
+        select
+        wd.id,wd.code,wd.name,wt.team,wt.order_number as orderNumber
+        from w_dict as wd
+        left join w_teacher as wt on wt.id = wd.id
+    </select>
+</mapper>

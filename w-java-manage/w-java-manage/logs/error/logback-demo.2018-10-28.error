@@ -1,0 +1,45 @@
+【xkcoding】2018-10-28 20:20:39.892 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field fileUploadService in com.winterchen.controller.FileUploadController required a bean of type 'com.winterchen.service.user.FileUploadService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.winterchen.service.user.FileUploadService' in your configuration.
+
+【xkcoding】2018-10-28 20:21:16.374 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field fileUploadService in com.winterchen.controller.FileUploadController required a bean of type 'com.winterchen.service.user.FileUploadService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.winterchen.service.user.FileUploadService' in your configuration.
+
+【xkcoding】2018-10-28 20:21:30.248 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field fileUploadService in com.winterchen.controller.FileUploadController required a bean of type 'com.winterchen.service.user.FileUploadService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.winterchen.service.user.FileUploadService' in your configuration.
+

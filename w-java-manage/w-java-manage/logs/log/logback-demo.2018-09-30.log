@@ -1,0 +1,648 @@
+【xkcoding】2018-09-30 09:19:06.077 INFO  [main] c.w.Springboot2MybatisDemoApplication - Starting Springboot2MybatisDemoApplication on yangfengdeMacBook-Pro.local with PID 30398 (/Users/yangfeng/plugs/important/w_lunwen/java/w-java-manage/target/classes started by yangfeng in /Users/yangfeng/plugs/important/w_lunwen/java/w-java-manage)
+【xkcoding】2018-09-30 09:19:06.081 INFO  [main] c.w.Springboot2MybatisDemoApplication - No active profile set, falling back to default profiles: default
+【xkcoding】2018-09-30 09:19:06.172 INFO  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61e94def: startup date [Sun Sep 30 09:19:06 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-30 09:19:07.480 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$422cb551] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+【xkcoding】2018-09-30 09:19:08.310 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+【xkcoding】2018-09-30 09:19:08.325 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+【xkcoding】2018-09-30 09:19:08.334 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+【xkcoding】2018-09-30 09:19:08.335 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+【xkcoding】2018-09-30 09:19:08.339 INFO  [localhost-startStop-1] o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/yangfeng/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+【xkcoding】2018-09-30 09:19:08.433 INFO  [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+【xkcoding】2018-09-30 09:19:08.434 INFO  [localhost-startStop-1] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2262 ms
+【xkcoding】2018-09-30 09:19:08.810 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+【xkcoding】2018-09-30 09:19:08.812 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Servlet statViewServlet mapped to [/druid/*]
+【xkcoding】2018-09-30 09:19:08.816 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+【xkcoding】2018-09-30 09:19:08.816 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+【xkcoding】2018-09-30 09:19:08.816 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+【xkcoding】2018-09-30 09:19:08.816 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+【xkcoding】2018-09-30 09:19:08.817 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+【xkcoding】2018-09-30 09:19:08.817 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+【xkcoding】2018-09-30 09:19:08.900 INFO  [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+【xkcoding】2018-09-30 09:19:09.475 INFO  [main] c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+【xkcoding】2018-09-30 09:19:10.436 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/vlogin],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.ilogin(java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 09:19:10.437 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/delAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.delAccount(java.lang.Integer)
+【xkcoding】2018-09-30 09:19:10.437 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/deleteAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.deleteAccount(java.lang.String)
+【xkcoding】2018-09-30 09:19:10.437 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/AddEditAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.AddEditAccount(com.winterchen.model.AccountDomain)
+【xkcoding】2018-09-30 09:19:10.438 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/allAccount],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.AccountController.allAccount(int,int)
+【xkcoding】2018-09-30 09:19:10.438 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/updatePwd],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.updatePwd(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 09:19:10.438 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/article/getList],methods=[GET]}" onto public java.util.List<com.winterchen.model.ArticleTypeDomain> com.winterchen.controller.ArticleTypeController.getList(java.lang.String)
+【xkcoding】2018-09-30 09:19:10.440 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test4],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test4()
+【xkcoding】2018-09-30 09:19:10.440 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post1],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post1(int)
+【xkcoding】2018-09-30 09:19:10.441 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test3],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test3(java.lang.Integer)
+【xkcoding】2018-09-30 09:19:10.441 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test2],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.String> com.winterchen.controller.ExceptionController.test2()
+【xkcoding】2018-09-30 09:19:10.441 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test1],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test1()
+【xkcoding】2018-09-30 09:19:10.441 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post2],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post2(int)
+【xkcoding】2018-09-30 09:19:10.442 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf2],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf2(int)
+【xkcoding】2018-09-30 09:19:10.442 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf11/{id}],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf11(int)
+【xkcoding】2018-09-30 09:19:10.442 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf1],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf1(int)
+【xkcoding】2018-09-30 09:19:10.442 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf0],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf0(int)
+【xkcoding】2018-09-30 09:19:10.443 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post0],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post0(int)
+【xkcoding】2018-09-30 09:19:10.444 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads],methods=[GET]}" onto public java.lang.String com.winterchen.controller.FileUploadController.index()
+【xkcoding】2018-09-30 09:19:10.445 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload1],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> com.winterchen.controller.FileUploadController.upload1(org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+【xkcoding】2018-09-30 09:19:10.445 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload3],methods=[POST]}" onto public void com.winterchen.controller.FileUploadController.upload2(java.lang.String) throws java.io.IOException
+【xkcoding】2018-09-30 09:19:10.445 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload2],methods=[POST]}" onto public java.util.List<java.util.Map<java.lang.String, java.lang.String>> com.winterchen.controller.FileUploadController.upload2(org.springframework.web.multipart.MultipartFile[]) throws java.io.IOException
+【xkcoding】2018-09-30 09:19:10.446 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/getPhone],methods=[POST]}" onto public java.lang.Object com.winterchen.controller.GetPhoneController.JsonResult(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 09:19:10.447 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/log/list],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.LogController.findAllLog(int,int)
+【xkcoding】2018-09-30 09:19:10.447 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/api/insert],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.OrderInfoController.insert(com.winterchen.model.OrderInfoDomain)
+【xkcoding】2018-09-30 09:19:10.448 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/order/list],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.OrderManageController.list(int,int,int,java.lang.String,int,int,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 09:19:10.451 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/update],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.update(com.winterchen.model.RoleDomain)
+【xkcoding】2018-09-30 09:19:10.451 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/setRole],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.setRole(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 09:19:10.452 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/allRole],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.allRole(int,int,java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 09:19:10.452 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/baseInfo],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.baseInfo(com.winterchen.model.RoleDomain)
+【xkcoding】2018-09-30 09:19:10.455 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/add],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.add(com.winterchen.model.TeamDomain)
+【xkcoding】2018-09-30 09:19:10.455 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/more],methods=[GET]}" onto public java.util.List<com.winterchen.model.dto.UserDto> com.winterchen.controller.TeamController.more()
+【xkcoding】2018-09-30 09:19:10.456 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/dict],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.dict(java.lang.String)
+【xkcoding】2018-09-30 09:19:10.456 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/show],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.show()
+【xkcoding】2018-09-30 09:19:10.456 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/teamDes/findOne],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamDesController.findOne(java.lang.String)
+【xkcoding】2018-09-30 09:19:10.457 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/alone],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.alone(java.lang.Integer)
+【xkcoding】2018-09-30 09:19:10.458 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/add],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.addUser(com.winterchen.model.UserDomain)
+【xkcoding】2018-09-30 09:19:10.458 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/all],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.UserController.findAllUser(int,int,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 09:19:10.458 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/del],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.removeArea(java.lang.Integer)
+【xkcoding】2018-09-30 09:19:10.462 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+【xkcoding】2018-09-30 09:19:10.463 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+【xkcoding】2018-09-30 09:19:10.464 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+【xkcoding】2018-09-30 09:19:10.466 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+【xkcoding】2018-09-30 09:19:10.467 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+【xkcoding】2018-09-30 09:19:10.651 INFO  [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+【xkcoding】2018-09-30 09:19:10.852 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 09:19:11.077 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61e94def: startup date [Sun Sep 30 09:19:06 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-30 09:19:11.141 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 09:19:11.142 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 09:19:11.160 INFO  [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalExceptionHandler
+【xkcoding】2018-09-30 09:19:11.599 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+【xkcoding】2018-09-30 09:19:11.601 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'statFilter' has been autodetected for JMX exposure
+【xkcoding】2018-09-30 09:19:11.601 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+【xkcoding】2018-09-30 09:19:11.610 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+【xkcoding】2018-09-30 09:19:11.611 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+【xkcoding】2018-09-30 09:19:11.617 INFO  [main] o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+【xkcoding】2018-09-30 09:19:11.617 INFO  [main] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+【xkcoding】2018-09-30 09:19:11.641 INFO  [main] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+【xkcoding】2018-09-30 09:19:11.686 INFO  [main] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+【xkcoding】2018-09-30 09:19:11.969 INFO  [main] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: upload2UsingPOST_1
+【xkcoding】2018-09-30 09:19:12.122 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+【xkcoding】2018-09-30 09:19:12.145 INFO  [main] o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+【xkcoding】2018-09-30 09:19:12.159 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+【xkcoding】2018-09-30 09:19:12.164 INFO  [main] c.w.Springboot2MybatisDemoApplication - Started Springboot2MybatisDemoApplication in 6.685 seconds (JVM running for 7.805)
+【xkcoding】2018-09-30 09:24:19.658 INFO  [http-nio-8099-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+【xkcoding】2018-09-30 09:24:19.658 INFO  [http-nio-8099-exec-1] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+【xkcoding】2018-09-30 09:24:19.690 INFO  [http-nio-8099-exec-1] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+【xkcoding】2018-09-30 09:24:19.751 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.AccountController，【请求方法名】：ilogin
+【xkcoding】2018-09-30 09:24:23.456 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 09:24:47.171 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 09:45:47.708 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 09:47:08.472 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 09:47:21.350 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 09:47:31.460 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 09:47:41.518 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 09:57:04.937 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 09:57:38.046 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 10:13:37.956 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 10:13:47.898 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 10:18:34.091 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:10:57.965 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:20:00.768 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:20:15.828 INFO  [Thread-17] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61e94def: startup date [Sun Sep 30 09:19:06 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-30 14:20:15.999 INFO  [Thread-17] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+【xkcoding】2018-09-30 14:20:16.044 INFO  [Thread-17] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+【xkcoding】2018-09-30 14:20:16.060 INFO  [Thread-17] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+【xkcoding】2018-09-30 14:20:16.134 INFO  [Thread-17] c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+【xkcoding】2018-09-30 14:20:19.128 INFO  [main] c.w.Springboot2MybatisDemoApplication - Starting Springboot2MybatisDemoApplication on yangfengdeMacBook-Pro.local with PID 33701 (/Users/yangfeng/plugs/important/w_lunwen/java/w-java-manage/target/classes started by yangfeng in /Users/yangfeng/plugs/important/w_lunwen/java/w-java-manage)
+【xkcoding】2018-09-30 14:20:19.133 INFO  [main] c.w.Springboot2MybatisDemoApplication - No active profile set, falling back to default profiles: default
+【xkcoding】2018-09-30 14:20:19.255 INFO  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10b9db7b: startup date [Sun Sep 30 14:20:19 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-30 14:20:20.517 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e9798520] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+【xkcoding】2018-09-30 14:20:21.082 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+【xkcoding】2018-09-30 14:20:21.097 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+【xkcoding】2018-09-30 14:20:21.107 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+【xkcoding】2018-09-30 14:20:21.107 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+【xkcoding】2018-09-30 14:20:21.111 INFO  [localhost-startStop-1] o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/yangfeng/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+【xkcoding】2018-09-30 14:20:21.205 INFO  [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+【xkcoding】2018-09-30 14:20:21.205 INFO  [localhost-startStop-1] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1951 ms
+【xkcoding】2018-09-30 14:20:21.500 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+【xkcoding】2018-09-30 14:20:21.502 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Servlet statViewServlet mapped to [/druid/*]
+【xkcoding】2018-09-30 14:20:21.506 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+【xkcoding】2018-09-30 14:20:21.507 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+【xkcoding】2018-09-30 14:20:21.507 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+【xkcoding】2018-09-30 14:20:21.507 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+【xkcoding】2018-09-30 14:20:21.507 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+【xkcoding】2018-09-30 14:20:21.507 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+【xkcoding】2018-09-30 14:20:21.588 INFO  [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+【xkcoding】2018-09-30 14:20:22.124 INFO  [main] c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+【xkcoding】2018-09-30 14:20:23.091 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/vlogin],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.ilogin(java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:20:23.092 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/delAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.delAccount(java.lang.Integer)
+【xkcoding】2018-09-30 14:20:23.093 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/deleteAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.deleteAccount(java.lang.String)
+【xkcoding】2018-09-30 14:20:23.093 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/AddEditAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.AddEditAccount(com.winterchen.model.AccountDomain)
+【xkcoding】2018-09-30 14:20:23.093 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/allAccount],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.AccountController.allAccount(int,int)
+【xkcoding】2018-09-30 14:20:23.093 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/updatePwd],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.updatePwd(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:20:23.094 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/article/getList],methods=[GET]}" onto public java.util.List<com.winterchen.model.ArticleTypeDomain> com.winterchen.controller.ArticleTypeController.getList(java.lang.String)
+【xkcoding】2018-09-30 14:20:23.096 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf2],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf2(int)
+【xkcoding】2018-09-30 14:20:23.096 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test1],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test1()
+【xkcoding】2018-09-30 14:20:23.097 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test4],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test4()
+【xkcoding】2018-09-30 14:20:23.097 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post1],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post1(int)
+【xkcoding】2018-09-30 14:20:23.097 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test3],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test3(java.lang.Integer)
+【xkcoding】2018-09-30 14:20:23.098 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test2],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.String> com.winterchen.controller.ExceptionController.test2()
+【xkcoding】2018-09-30 14:20:23.098 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf1],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf1(int)
+【xkcoding】2018-09-30 14:20:23.098 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf0],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf0(int)
+【xkcoding】2018-09-30 14:20:23.098 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post2],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post2(int)
+【xkcoding】2018-09-30 14:20:23.099 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf11/{id}],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf11(int)
+【xkcoding】2018-09-30 14:20:23.099 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post0],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post0(int)
+【xkcoding】2018-09-30 14:20:23.100 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads],methods=[GET]}" onto public java.lang.String com.winterchen.controller.FileUploadController.index()
+【xkcoding】2018-09-30 14:20:23.101 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload3],methods=[POST]}" onto public void com.winterchen.controller.FileUploadController.upload2(java.lang.String) throws java.io.IOException
+【xkcoding】2018-09-30 14:20:23.102 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload2],methods=[POST]}" onto public java.util.List<java.util.Map<java.lang.String, java.lang.String>> com.winterchen.controller.FileUploadController.upload2(org.springframework.web.multipart.MultipartFile[]) throws java.io.IOException
+【xkcoding】2018-09-30 14:20:23.102 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload1],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> com.winterchen.controller.FileUploadController.upload1(org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+【xkcoding】2018-09-30 14:20:23.103 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/getPhone],methods=[POST]}" onto public java.lang.Object com.winterchen.controller.GetPhoneController.JsonResult(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:20:23.104 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/log/list],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.LogController.findAllLog(int,int)
+【xkcoding】2018-09-30 14:20:23.104 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/api/insert],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.OrderInfoController.insert(com.winterchen.model.OrderInfoDomain)
+【xkcoding】2018-09-30 14:20:23.105 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/order/list],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.OrderManageController.list(int,int,int,java.lang.String,int,int,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:20:23.109 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/update],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.update(com.winterchen.model.RoleDomain)
+【xkcoding】2018-09-30 14:20:23.109 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/setRole],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.setRole(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:20:23.109 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/allRole],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.allRole(int,int,java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:20:23.110 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/baseInfo],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.baseInfo(com.winterchen.model.RoleDomain)
+【xkcoding】2018-09-30 14:20:23.114 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/add],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.add(com.winterchen.model.TeamDomain)
+【xkcoding】2018-09-30 14:20:23.114 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/more],methods=[GET]}" onto public java.util.List<com.winterchen.model.dto.UserDto> com.winterchen.controller.TeamController.more()
+【xkcoding】2018-09-30 14:20:23.115 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/show],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.show()
+【xkcoding】2018-09-30 14:20:23.115 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/dict],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.dict(java.lang.String)
+【xkcoding】2018-09-30 14:20:23.116 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/teamDes/findOne],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamDesController.findOne(java.lang.String)
+【xkcoding】2018-09-30 14:20:23.117 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/alone],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.alone(java.lang.Integer)
+【xkcoding】2018-09-30 14:20:23.117 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/all],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.UserController.findAllUser(int,int,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:20:23.117 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/del],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.removeArea(java.lang.Integer)
+【xkcoding】2018-09-30 14:20:23.118 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/add],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.addUser(com.winterchen.model.UserDomain)
+【xkcoding】2018-09-30 14:20:23.122 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+【xkcoding】2018-09-30 14:20:23.123 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+【xkcoding】2018-09-30 14:20:23.124 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+【xkcoding】2018-09-30 14:20:23.126 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+【xkcoding】2018-09-30 14:20:23.127 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+【xkcoding】2018-09-30 14:20:23.312 INFO  [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+【xkcoding】2018-09-30 14:20:23.520 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 14:20:23.795 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10b9db7b: startup date [Sun Sep 30 14:20:19 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-30 14:20:23.872 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 14:20:23.872 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 14:20:23.895 INFO  [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalExceptionHandler
+【xkcoding】2018-09-30 14:20:24.396 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+【xkcoding】2018-09-30 14:20:24.398 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'statFilter' has been autodetected for JMX exposure
+【xkcoding】2018-09-30 14:20:24.398 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+【xkcoding】2018-09-30 14:20:24.404 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+【xkcoding】2018-09-30 14:20:24.405 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+【xkcoding】2018-09-30 14:20:24.413 INFO  [main] o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+【xkcoding】2018-09-30 14:20:24.414 INFO  [main] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+【xkcoding】2018-09-30 14:20:24.434 INFO  [main] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+【xkcoding】2018-09-30 14:20:24.469 INFO  [main] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+【xkcoding】2018-09-30 14:20:24.704 INFO  [main] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: upload2UsingPOST_1
+【xkcoding】2018-09-30 14:20:24.838 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+【xkcoding】2018-09-30 14:20:24.864 INFO  [main] o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+【xkcoding】2018-09-30 14:20:24.879 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+【xkcoding】2018-09-30 14:20:24.883 INFO  [main] c.w.Springboot2MybatisDemoApplication - Started Springboot2MybatisDemoApplication in 6.497 seconds (JVM running for 7.78)
+【xkcoding】2018-09-30 14:20:35.632 INFO  [http-nio-8099-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+【xkcoding】2018-09-30 14:20:35.633 INFO  [http-nio-8099-exec-1] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+【xkcoding】2018-09-30 14:20:35.666 INFO  [http-nio-8099-exec-1] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 33 ms
+【xkcoding】2018-09-30 14:20:35.705 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:22:45.287 INFO  [Thread-16] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10b9db7b: startup date [Sun Sep 30 14:20:19 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-30 14:22:45.290 INFO  [Thread-16] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+【xkcoding】2018-09-30 14:22:45.292 INFO  [Thread-16] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+【xkcoding】2018-09-30 14:22:45.292 INFO  [Thread-16] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+【xkcoding】2018-09-30 14:22:45.300 INFO  [Thread-16] c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+【xkcoding】2018-09-30 14:22:49.775 INFO  [main] c.w.Springboot2MybatisDemoApplication - Starting Springboot2MybatisDemoApplication on yangfengdeMacBook-Pro.local with PID 33713 (/Users/yangfeng/plugs/important/w_lunwen/java/w-java-manage/target/classes started by yangfeng in /Users/yangfeng/plugs/important/w_lunwen/java/w-java-manage)
+【xkcoding】2018-09-30 14:22:49.780 INFO  [main] c.w.Springboot2MybatisDemoApplication - No active profile set, falling back to default profiles: default
+【xkcoding】2018-09-30 14:22:49.848 INFO  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@42721fe: startup date [Sun Sep 30 14:22:49 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-30 14:22:51.148 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a27246b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+【xkcoding】2018-09-30 14:22:51.674 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+【xkcoding】2018-09-30 14:22:51.686 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+【xkcoding】2018-09-30 14:22:51.697 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+【xkcoding】2018-09-30 14:22:51.697 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+【xkcoding】2018-09-30 14:22:51.702 INFO  [localhost-startStop-1] o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/yangfeng/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+【xkcoding】2018-09-30 14:22:51.780 INFO  [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+【xkcoding】2018-09-30 14:22:51.781 INFO  [localhost-startStop-1] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1933 ms
+【xkcoding】2018-09-30 14:22:52.100 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+【xkcoding】2018-09-30 14:22:52.102 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Servlet statViewServlet mapped to [/druid/*]
+【xkcoding】2018-09-30 14:22:52.105 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+【xkcoding】2018-09-30 14:22:52.105 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+【xkcoding】2018-09-30 14:22:52.105 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+【xkcoding】2018-09-30 14:22:52.105 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+【xkcoding】2018-09-30 14:22:52.105 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+【xkcoding】2018-09-30 14:22:52.106 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsFilter' to: [/*]
+【xkcoding】2018-09-30 14:22:52.183 INFO  [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+【xkcoding】2018-09-30 14:22:52.704 INFO  [main] c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+【xkcoding】2018-09-30 14:22:53.607 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/vlogin],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.ilogin(java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:22:53.608 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/delAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.delAccount(java.lang.Integer)
+【xkcoding】2018-09-30 14:22:53.608 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/deleteAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.deleteAccount(java.lang.String)
+【xkcoding】2018-09-30 14:22:53.609 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/AddEditAccount],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.AddEditAccount(com.winterchen.model.AccountDomain)
+【xkcoding】2018-09-30 14:22:53.609 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/allAccount],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.AccountController.allAccount(int,int)
+【xkcoding】2018-09-30 14:22:53.609 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/updatePwd],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.AccountController.updatePwd(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:22:53.610 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/article/getList],methods=[GET]}" onto public java.util.List<com.winterchen.model.ArticleTypeDomain> com.winterchen.controller.ArticleTypeController.getList(java.lang.String)
+【xkcoding】2018-09-30 14:22:53.612 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test1],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test1()
+【xkcoding】2018-09-30 14:22:53.612 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test4],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test4()
+【xkcoding】2018-09-30 14:22:53.612 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test3],methods=[GET]}" onto public java.lang.String com.winterchen.controller.ExceptionController.test3(java.lang.Integer)
+【xkcoding】2018-09-30 14:22:53.613 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post2],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post2(int)
+【xkcoding】2018-09-30 14:22:53.613 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post1],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post1(int)
+【xkcoding】2018-09-30 14:22:53.613 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf0],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf0(int)
+【xkcoding】2018-09-30 14:22:53.614 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf1],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf1(int)
+【xkcoding】2018-09-30 14:22:53.614 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf11/{id}],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf11(int)
+【xkcoding】2018-09-30 14:22:53.614 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test2],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.String> com.winterchen.controller.ExceptionController.test2()
+【xkcoding】2018-09-30 14:22:53.614 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/yf2],methods=[GET]}" onto public int com.winterchen.controller.ExceptionController.yf2(int)
+【xkcoding】2018-09-30 14:22:53.615 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/post0],methods=[POST]}" onto public int com.winterchen.controller.ExceptionController.post0(int)
+【xkcoding】2018-09-30 14:22:53.616 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads],methods=[GET]}" onto public java.lang.String com.winterchen.controller.FileUploadController.index()
+【xkcoding】2018-09-30 14:22:53.617 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload3],methods=[POST]}" onto public void com.winterchen.controller.FileUploadController.upload2(java.lang.String) throws java.io.IOException
+【xkcoding】2018-09-30 14:22:53.618 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload2],methods=[POST]}" onto public java.util.List<java.util.Map<java.lang.String, java.lang.String>> com.winterchen.controller.FileUploadController.upload2(org.springframework.web.multipart.MultipartFile[]) throws java.io.IOException
+【xkcoding】2018-09-30 14:22:53.618 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/uploads/upload1],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> com.winterchen.controller.FileUploadController.upload1(org.springframework.web.multipart.MultipartFile) throws java.io.IOException
+【xkcoding】2018-09-30 14:22:53.619 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/account/getPhone],methods=[POST]}" onto public java.lang.Object com.winterchen.controller.GetPhoneController.JsonResult(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:22:53.619 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/log/list],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.LogController.findAllLog(int,int)
+【xkcoding】2018-09-30 14:22:53.620 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/api/insert],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.OrderInfoController.insert(com.winterchen.model.OrderInfoDomain)
+【xkcoding】2018-09-30 14:22:53.621 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/order/list],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.OrderManageController.list(int,int,int,java.lang.String,int,int,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:22:53.624 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/update],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.update(com.winterchen.model.RoleDomain)
+【xkcoding】2018-09-30 14:22:53.625 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/setRole],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.setRole(java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:22:53.625 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/allRole],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.allRole(int,int,java.lang.String,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:22:53.625 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/wx/user/baseInfo],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.RoleController.baseInfo(com.winterchen.model.RoleDomain)
+【xkcoding】2018-09-30 14:22:53.629 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/add],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.add(com.winterchen.model.TeamDomain)
+【xkcoding】2018-09-30 14:22:53.629 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/more],methods=[GET]}" onto public java.util.List<com.winterchen.model.dto.UserDto> com.winterchen.controller.TeamController.more()
+【xkcoding】2018-09-30 14:22:53.630 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/dict],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.dict(java.lang.String)
+【xkcoding】2018-09-30 14:22:53.630 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/team/show],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamController.show()
+【xkcoding】2018-09-30 14:22:53.630 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/teamDes/findOne],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.TeamDesController.findOne(java.lang.String)
+【xkcoding】2018-09-30 14:22:53.632 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/add],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.addUser(com.winterchen.model.UserDomain)
+【xkcoding】2018-09-30 14:22:53.632 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/alone],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.alone(java.lang.Integer)
+【xkcoding】2018-09-30 14:22:53.632 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/all],methods=[GET]}" onto public java.lang.Object com.winterchen.controller.UserController.findAllUser(int,int,java.lang.String,java.lang.String)
+【xkcoding】2018-09-30 14:22:53.633 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/del],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.winterchen.controller.UserController.removeArea(java.lang.Integer)
+【xkcoding】2018-09-30 14:22:53.637 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+【xkcoding】2018-09-30 14:22:53.637 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+【xkcoding】2018-09-30 14:22:53.638 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+【xkcoding】2018-09-30 14:22:53.641 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+【xkcoding】2018-09-30 14:22:53.642 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+【xkcoding】2018-09-30 14:22:53.808 INFO  [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+【xkcoding】2018-09-30 14:22:54.045 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 14:22:54.291 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@42721fe: startup date [Sun Sep 30 14:22:49 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-30 14:22:54.368 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 14:22:54.369 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+【xkcoding】2018-09-30 14:22:54.392 INFO  [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalExceptionHandler
+【xkcoding】2018-09-30 14:22:54.895 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+【xkcoding】2018-09-30 14:22:54.897 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'statFilter' has been autodetected for JMX exposure
+【xkcoding】2018-09-30 14:22:54.898 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+【xkcoding】2018-09-30 14:22:54.906 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+【xkcoding】2018-09-30 14:22:54.907 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+【xkcoding】2018-09-30 14:22:54.912 INFO  [main] o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+【xkcoding】2018-09-30 14:22:54.913 INFO  [main] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+【xkcoding】2018-09-30 14:22:54.931 INFO  [main] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+【xkcoding】2018-09-30 14:22:54.979 INFO  [main] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+【xkcoding】2018-09-30 14:22:55.267 INFO  [main] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: upload2UsingPOST_1
+【xkcoding】2018-09-30 14:22:55.371 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+【xkcoding】2018-09-30 14:22:55.401 INFO  [main] o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+【xkcoding】2018-09-30 14:22:55.418 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+【xkcoding】2018-09-30 14:22:55.423 INFO  [main] c.w.Springboot2MybatisDemoApplication - Started Springboot2MybatisDemoApplication in 6.39 seconds (JVM running for 7.282)
+【xkcoding】2018-09-30 14:23:04.014 INFO  [http-nio-8099-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+【xkcoding】2018-09-30 14:23:04.014 INFO  [http-nio-8099-exec-1] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+【xkcoding】2018-09-30 14:23:04.053 INFO  [http-nio-8099-exec-1] o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 39 ms
+【xkcoding】2018-09-30 14:23:04.091 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:24:23.723 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:26:28.836 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:31:15.032 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:34:21.184 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:34:39.263 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:34:49.250 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:34:50.113 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:35:09.132 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:35:10.070 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:05.307 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:07.283 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:07.316 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:07.352 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:07.382 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:07.449 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:20.480 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:20.513 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:20.547 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:20.579 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:20.630 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:24.629 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:24.662 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:24.698 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:24.730 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:24.761 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:24.816 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:36:42.093 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:37:12.287 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:37:13.151 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:38:31.391 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:38:32.323 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:38:48.259 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:38:49.246 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:39:13.290 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:39:55.763 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:40:33.584 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:40:43.051 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:41:09.158 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:42:06.628 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:42:12.546 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:42:17.540 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:42:18.548 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:42:27.567 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:42:32.580 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:43:45.762 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:43:59.780 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:44:36.668 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:44:47.275 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:44:51.912 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:45:33.840 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:45:46.508 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:45:53.819 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:07.340 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:42.491 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:45.874 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:46.403 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:47.787 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:50.874 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:52.748 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:54.914 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:46:56.353 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:47:00.099 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:47:00.757 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:48:16.080 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:48:16.904 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:48:25.530 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:48:35.880 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:49:03.708 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:51:24.726 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:51:38.094 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:51:38.942 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:53:00.010 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 14:53:00.953 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:07:14.587 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:08:37.524 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:08:52.441 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:20:03.978 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:20:06.617 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:20:10.077 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:20:13.203 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:21:51.959 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:22:25.042 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:22:33.924 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:22:36.815 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:22:43.838 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:22:47.092 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:22:51.522 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:23:24.068 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:23:28.964 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:23:34.112 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:23:39.749 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:24:56.286 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:25:01.187 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:25:03.730 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:25:06.372 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:25:09.125 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:25:11.208 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:25:16.403 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:25:53.089 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:06.720 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:08.835 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:11.722 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:16.930 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:23.800 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:25.309 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:28.395 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:33.210 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:36.500 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:48.993 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:26:50.935 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:27:24.089 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:27:25.996 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:27:29.359 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:28:03.296 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:28:07.591 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:29:51.226 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:29:54.540 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:29:56.885 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:30:48.295 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:30:51.238 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:34:02.086 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:34:22.277 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:34:25.121 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:35:44.406 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:35:46.428 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:38:28.557 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:38:31.066 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:39:01.410 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:39:05.136 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:40:03.405 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:40:17.363 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:40:29.362 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:40:37.318 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:40:51.346 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:41:07.398 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:41:10.008 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:41:47.372 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:42:02.375 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:42:13.489 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:42:16.138 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:42:22.605 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:43:05.403 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:43:25.301 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:43:55.435 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:44:01.435 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:44:44.436 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:47:08.497 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:48:45.180 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:49:08.607 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:50:07.615 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:50:38.640 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:51:05.804 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:51:15.809 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:51:28.506 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:52:21.000 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:52:27.665 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:52:41.590 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:52:42.969 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:52:44.491 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:52:46.334 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:53:06.863 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:53:34.107 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:54:07.469 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:54:29.790 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:54:59.003 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:54:59.895 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:56:13.351 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:57:16.122 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:57:18.152 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:57:20.966 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:58:35.699 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 15:58:39.234 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:00:11.462 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:00:20.350 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:00:34.251 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:00:37.850 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:01:23.339 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:01:25.016 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:01:49.107 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:01:51.723 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:02:24.107 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:02:26.420 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:03:09.245 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:04:26.999 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:04:30.966 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:04:37.905 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:04:40.897 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:04:46.184 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:04:53.917 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:05:59.485 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:06:06.402 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:06:11.342 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:07:24.984 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:07:56.251 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:09:05.468 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:09:43.158 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:09:45.559 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:10:23.626 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:10:28.248 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:10:50.737 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:10:56.597 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:11:19.516 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:12:00.865 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:12:56.920 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:13:00.068 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:13:02.310 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:13:09.184 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:13:10.402 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:13:18.020 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:13:20.869 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:13:22.409 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:13:25.365 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:14:25.337 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:16:08.369 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:16:31.297 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:17:21.191 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:17:33.729 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:17:40.297 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:17:42.458 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:18:13.677 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:18:23.352 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:18:53.141 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:19:00.351 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:19:26.450 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:20:13.891 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:20:16.759 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:20:18.931 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:20:20.696 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:20:26.237 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:21:03.480 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:21:21.347 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:21:24.552 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:21:43.856 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:21:51.891 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:23.663 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:26.526 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:29.491 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:31.882 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:34.062 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:36.503 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:38.485 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:43.410 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:47.172 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:22:54.617 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:24:22.457 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:31.972 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:36.783 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:38.651 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:41.779 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:43.659 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:47.552 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:48.201 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:53.163 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:57.721 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:24:59.869 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:25:01.412 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:25:04.431 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:25:39.809 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:27:32.101 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:27:43.060 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:27:46.185 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:27:49.333 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:27:51.728 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:27:53.974 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:28:09.072 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:28:18.470 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:28:36.513 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:28:39.317 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:28:45.169 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:28:48.255 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:28:50.517 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:28:52.801 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:29:09.561 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:29:28.432 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:29:42.964 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:29:45.323 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:30:31.388 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:30:33.994 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:30:38.374 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:30:41.232 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:31:19.903 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:38:48.998 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:39:00.927 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:39:57.462 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:40:11.890 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:40:38.057 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:41:03.082 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:41:11.441 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:41:13.766 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:41:16.930 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:41:19.701 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:41:21.964 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:42:57.986 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:43:02.200 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:43:04.700 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:43:07.063 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:43:09.430 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:43:12.928 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:43:17.771 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 16:46:33.334 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:46:33.800 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:46:33.823 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:46:33.823 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:46:33.964 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:46:33.974 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:46:38.843 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:46:38.906 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:46:46.609 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:46:46.654 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:46:50.765 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:46:50.848 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:46:53.339 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:47:26.072 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:47:26.111 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:47:28.491 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:47:28.705 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:48:31.508 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:48:54.206 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:48:54.357 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:50:10.186 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.ArticleTypeController，【请求方法名】：getList
+【xkcoding】2018-09-30 16:50:11.178 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:50:23.085 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:50:23.098 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:50:52.073 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:50:58.561 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:50:58.575 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:51:05.467 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.GetPhoneController，【请求方法名】：JsonResult
+【xkcoding】2018-09-30 16:51:06.788 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：update
+【xkcoding】2018-09-30 16:51:35.592 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:52:37.660 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:52:37.716 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:52:53.268 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 16:52:53.344 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:58:41.873 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:58:49.910 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 16:59:57.336 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:02:05.340 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:02:09.382 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:02:12.739 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:05:40.772 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:05:59.931 INFO  [http-nio-8099-exec-10] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：baseInfo
+【xkcoding】2018-09-30 17:05:59.961 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:06:05.338 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.GetPhoneController，【请求方法名】：JsonResult
+【xkcoding】2018-09-30 17:06:05.577 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：update
+【xkcoding】2018-09-30 17:06:22.832 INFO  [http-nio-8099-exec-4] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:06:25.690 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 17:06:36.182 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 17:06:38.709 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 17:06:41.315 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 17:06:43.739 INFO  [http-nio-8099-exec-8] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.OrderManageController，【请求方法名】：list
+【xkcoding】2018-09-30 17:07:46.591 INFO  [http-nio-8099-exec-1] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:07:48.181 INFO  [http-nio-8099-exec-2] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:07:59.214 INFO  [http-nio-8099-exec-3] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:11:51.756 INFO  [http-nio-8099-exec-5] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.AccountController，【请求方法名】：ilogin
+【xkcoding】2018-09-30 17:11:54.092 INFO  [http-nio-8099-exec-6] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.RoleController，【请求方法名】：allRole
+【xkcoding】2018-09-30 17:11:54.114 INFO  [http-nio-8099-exec-7] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.TeamController，【请求方法名】：dict
+【xkcoding】2018-09-30 17:11:54.235 INFO  [http-nio-8099-exec-9] com.winterchen.aspectj.AopLog - 【请求类名】：com.winterchen.controller.TeamController，【请求方法名】：show

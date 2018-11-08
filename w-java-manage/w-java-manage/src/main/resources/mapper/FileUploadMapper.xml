@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+
+<mapper namespace="com.winterchen.dao.FileUploadDao">
+
+    <insert id="fileUpload" parameterType="com.winterchen.model.FileDomain">
+        insert into w_user_files(orderID,openid,file,size)
+        values (#{orderID},#{openid},#{file},#{size})
+    </insert>
+
+    <select id="findFile" resultType="com.winterchen.model.FileDomain">
+        select * from w_user_files where file = #{file}
+    </select>
+
+    <insert id="fileUpload1" parameterType="com.winterchen.model.FileDomain">
+        insert into w_teacher_files(orderID,openid,file,size)
+        values (#{orderID},#{openid},#{file},#{size})
+    </insert>
+
+    <select id="findFile1" resultType="com.winterchen.model.FileDomain">
+        select * from w_teacher_files where file = #{file}
+    </select>
+
+    <select id="orderDown" resultType="com.winterchen.model.FileDomain">
+        select * from w_teacher_files where orderID = #{orderID}
+    </select>
+
+    <select id="orderDown_user" resultType="com.winterchen.model.FileDomain">
+        select * from w_user_files where orderID = #{orderID}
+    </select>
+
+
+
+
+</mapper>

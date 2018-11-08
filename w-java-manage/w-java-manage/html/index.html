@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="./jquery.js" ></script>
+    <script src="./paging.js" ></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /*
+          * 外面盒子样式---自己定义
+          */
+
+        .page_div {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            font-family: "microsoft yahei";
+            color: #666666;
+            margin-right: 10px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        /*
+         * 页数按钮样式
+         */
+
+        .page_div a {
+            min-width: 30px;
+            height: 28px;
+            border: 1px solid #dce0e0!important;
+            text-align: center;
+            margin: 0 4px;
+            cursor: pointer;
+            line-height: 28px;
+            color: #666666;
+            font-size: 13px;
+            display: inline-block;
+        }
+
+        #firstPage,
+        #lastPage {
+            width: 50px;
+            color: #0073A9;
+            border: 1px solid #0073A9!important;
+        }
+
+        #prePage,
+        #nextPage {
+            width: 70px;
+            color: #0073A9;
+            border: 1px solid #0073A9!important;
+        }
+
+        .page_div .current {
+            background-color: #0073A9;
+            border-color: #0073A9;
+            color: #FFFFFF;
+        }
+
+        .totalPages {
+            margin: 0 10px;
+        }
+
+        .totalPages span,
+        .totalSize span {
+            color: #0073A9;
+            margin: 0 5px;
+        }
+    </style>
+
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 500px;
+        }
+        td{
+            border: 1px solid red;
+        }
+
+        .right{
+            float: right;
+            border: 1px solid red;
+
+            width: 600px;
+            height: 500px;
+            margin-right: 100px;
+        }
+        .left{
+            float: left;
+            width: 400px;
+            height: 500px;
+            margin-left: 50px;
+            border: 1px solid green;
+        }
+        .left p {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .itop{
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid red;
+            margin-bottom: 20px;
+        }
+
+
+    </style>
+</head>
+<body >
+
+<div class="itop">
+    <a href="upload.html">文件上传</a>
+</div>
+
+
+<div class="left">
+ <h3>新增</h3>
+    <p>姓名：<input id="add_name" type="text" placeholder="请输入姓名"></p>
+    <p>密码：<input id="add_pwd" type="text" placeholder="请输入密码"></p>
+    <p>手机号：<input id="add_phone" type="text" placeholder="请输入手机号"></p>
+    <p><input type="button" value="新增" id="addData"></p>
+</div>
+
+<div class="right">
+<div>
+
+    <input type="text" id="iname" placeholder="请输入姓名">
+    <input type="text" id="iphone" placeholder="请输入手机号">
+    <input type="button" value="搜索" id="isearch">
+</div>
+
+<h3>列表</h3>
+    <table>
+        <thead>
+           <tr>
+               <th>id</th>
+               <th>姓名</th>
+               <th>密码</th>
+               <th>手机号</th>
+           </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <div id="page" class="page_div"></div>
+</div>
+
+
+<input type="button"  value="test" id="test">
+
+
+
+    <script>
+
+
+        $("#test").click(function () {
+            $.ajax({
+                url:'http://localhost:8099/test3',
+                type:'get'
+            })
+        })
+
+        //新增
+        $("#addData").click(function () {
+            ajax_add()
+        })
+
+        //编辑回显
+        function edit(id) {
+            ajax_edit(id)
+        }
+
+        //删除
+        function del(id,obj) {
+            ajax_del(id,obj)
+        }
+
+
+
+
+        //默认列表
+        ajaxTest(1)
+
+        //搜索列表
+      $("#isearch").click(function () {
+          var name = $("#iname").val()
+          var phone = $("#iphone").val()
+          var obj = {name:name,phone:phone}
+          ajaxTest(1,obj)
+      })
+
+
+
+        function ajax_del(id,obj){
+
+            $.ajax({
+                url:'http://localhost:8099/user/del',
+                dataType:'json',
+                type:'POST',
+                data:{
+                    userId:id
+
+                },
+                success:function (data) {
+
+                    if(data == '1'){
+                        ajaxTest(1)
+                       //$(obj).parents('tr').remove()
+                        alert("删除成功！")
+                    }
+
+                }
+            })
+        }
+
+        function ajax_edit(id){
+
+            $.ajax({
+                url:'http://localhost:8099/user/alone',
+                dataType:'json',
+                type:'POST',
+                data:{
+                    userId:id
+
+                },
+                success:function (data) {
+
+                    $("#add_name").val(data.userName).attr("data-id",id)
+                    $("#add_pwd").val(data.password)
+                    $("#add_phone").val(data.phone)
+
+                }
+            })
+        }
+
+
+
+        function ajax_add(){
+            $.ajax({
+                url:'http://localhost:8099/user/add',
+                dataType:'json',
+                type:'POST',
+                data:{
+                    userId:$("#add_name").attr("data-id"),
+                    userName:$("#add_name").val(),
+                    password:$("#add_pwd").val(),
+                    phone:$("#add_phone").val()
+                },
+                success:function (data) {
+                   if(data == '1'){
+                       ajaxTest(1)
+                       if($("#add_name").attr("data-id")){
+                           alert("编辑成功！")
+                       }else{
+                           alert("新增成功！")
+                       }
+
+
+                   }
+
+                }
+            })
+        }
+
+
+
+        function  ajaxTest(num,param) {
+          var name,phone;
+          if(param){
+             name =  param.name
+              phone = param.phone
+          }
+
+
+            $.ajax({
+                url:'http://localhost:8099/user/all',
+                dataType:'json',
+                type:'GET',
+                data:{
+                    pageNum:num,
+                    pageSize:5,
+                    name:name,
+                    phone:phone
+                },
+                success:function (data) {
+                    console.log(data);
+                    var list = data.list
+                    var html = "";
+                    for(var i = 0;i<list.length;i++) {
+                        html+='<tr>';
+                        html += '<td>'+list[i].userId+'</td>';
+                        html += '<td>'+list[i].userName+'</td>';
+                        html += '<td>'+list[i].password+'</td>';
+                        html += '<td>'+list[i].phone+'</td>';
+                        html += '<td><a href="javascript:void(0)" onclick="edit('+list[i].userId+')">编辑</a><span style="padding: 0 6px;">|</span><a  onclick="del('+list[i].userId+',this)" href="javascript:void(0)">删除</a></td>';
+                        html+='</tr>';
+                    }
+
+                    $("#tbody").html(html)
+
+                    $("#page").paging({
+                        pageNo:num,   //当前页
+                        totalPage: data.pages, //总页数
+                        totalSize: data.total, //总条数
+                        callback: function(num) { //第几页
+                            ajaxTest(num)
+                        }
+                    })
+                }
+            })
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+
+<mapper namespace="com.winterchen.dao.AccountDao">
+
+    <select id="allAccount" resultType="com.winterchen.model.AccountDomain">
+        select * from w_account where not team and identifying=1
+    </select>
+
+<!--查询账号是否可用-->
+    <select id="checkUser" resultType="com.winterchen.model.AccountDomain">
+        select * from w_account where name=#{name}  and identifying=1
+    </select>
+
+    <!--where name = #{name } and password = #{password}    resultType="int" -->
+    <select id="ilogin"  parameterType="String"    resultType="com.winterchen.model.AccountDomain" >
+        select * from w_account where name = #{name } and password = #{password} and identifying = 1
+
+
+    </select>
+
+    <insert id="insert" parameterType="com.winterchen.model.AccountDomain">
+        insert into w_account (id,token,name,password,team,creat_time,identifying)
+        values (#{id},#{token},#{name},#{password},#{team},#{creat_time},#{identifying})
+    </insert>
+
+
+    <update id="updatePwd" parameterType="com.winterchen.model.AccountDomain">
+        update w_account set
+       password =#{newPwd}
+
+        where token = #{token} and password = #{password}
+    </update>
+
+
+
+    <!--逻辑删除-->
+    <update id="deleteAccount" parameterType="com.winterchen.model.AccountDomain">
+        update w_account set
+       identifying = 0
+
+        where token = #{token}
+
+    </update>
+
+
+    <delete id="delAccount" parameterType="com.winterchen.model.AccountDomain">
+        delete from
+         w_account
+          where
+          id = #{id}
+    </delete>
+
+    <!--修改密码-->
+    <update id="changePwd" parameterType="com.winterchen.model.AccountDomain">
+         update w_account set
+       password = #{newPwd}
+
+        where password = #{password} and token = #{token}
+    </update>
+
+
+</mapper>

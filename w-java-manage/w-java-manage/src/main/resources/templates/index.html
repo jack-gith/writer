@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+</head>
+<body>
+<div>
+    <form  enctype="multipart/form-data" id="form1">
+        <p>
+            文件1：<input type="file" id="file1" name="file"/>
+            <input type="button" id="upload" value="上传"/>
+        </p>
+    </form>
+</div>
+
+
+<script>
+
+
+    $("#upload").click(function () {
+        upload()
+    })
+    function upload(){
+        var formData = new FormData(document.getElementById("form1"));
+        formData.append("openid",getQueryString('openid'))
+        formData.append("orderID",getQueryString('orderID'))
+        $.ajax({
+            url: "http://localhost:8099/uploads/upload1",
+            type: 'POST',
+            data: formData,
+            dataType: 'JSON',
+            cache: false,
+            processData: false,
+            contentType: false,
+            success:function (res) {
+                alert("上传成功！");
+            },
+            error:function () {
+                alert("上传失败！")
+            }
+        }).done(function(ret){
+
+        })
+    }
+
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        var q = window.location.pathname.substr(1).match(reg_rewrite);
+        if(r != null){
+            return unescape(r[2]);
+        }else if(q != null){
+            return unescape(q[2]);
+        }else{
+            return null;
+        }
+    }
+
+</script>
+
+</body>
+</html>

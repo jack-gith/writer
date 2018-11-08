@@ -1,0 +1,5 @@
+【xkcoding】2018-09-25 09:13:22.242 INFO  [Thread-15] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@19b93fa8: startup date [Mon Sep 24 14:54:15 CST 2018]; root of context hierarchy
+【xkcoding】2018-09-25 09:13:22.347 INFO  [Thread-15] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+【xkcoding】2018-09-25 09:13:22.352 INFO  [Thread-15] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+【xkcoding】2018-09-25 09:13:22.356 INFO  [Thread-15] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+【xkcoding】2018-09-25 09:13:22.376 INFO  [Thread-15] c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

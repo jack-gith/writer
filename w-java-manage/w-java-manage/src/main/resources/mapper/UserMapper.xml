@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--客户映射 调用dao层接口
+ 一个命名空间（namespace） 对应一个dao接口
+
+这个id也应该对应dao里面的某个方法（相当于方法的实现），因此id 应该与方法名一致
+ -->
+<mapper namespace="com.winterchen.dao.UserDao" >
+  <sql id="BASE_TABLE">
+    t_user a
+  </sql>
+
+
+    <!--userId,userName,password,phone-->
+  <sql id="BASE_COLUMN">
+    a.userId AS "userId",
+    a.userName AS "userName",
+    a.password AS "password",
+    a.phone AS "phone"
+  </sql>
+
+  <!-- 2. parameterType （可选配置, 默认为mybatis自动选择处理）
+        将要传入语句的参数的完全限定类名或别名， 如果不配置，mybatis会通过ParameterHandler 根据参数类型默认选择合适的typeHandler进行处理
+        parameterType 主要指定参数类型，可以是int, short, long, string等类型，也可以是复杂类型（如对象） -->
+  <!-- 3. flushCache （可选配置，默认配置为true）
+        将其设置为 true，任何时候只要语句被调用，都会导致本地缓存和二级缓存都会被清空，默认值：true（对应插入、更新和删除语句） -->
+  <!-- 4. statementType （可选配置，默认配置为PREPARED）
+        STATEMENT，PREPARED 或 CALLABLE 的一个。这会让 MyBatis 分别使用 Statement，PreparedStatement 或 CallableStatement，默认值：PREPARED。 -->
+  <!-- 5. keyProperty (可选配置， 默认为unset)
+   （仅对 insert 和 update 有用）唯一标记一个属性，MyBatis 会通过 getGeneratedKeys 的返回值或者通过 insert 语句的 selectKey
+   子元素设置它的键值，默认：unset。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表。 -->
+
+  <!-- 6. keyColumn     (可选配置)
+  （仅对 insert 和 update 有用）通过生成的键值设置表中的列名，这个设置仅在某些数据库（像 PostgreSQL）是必须的，
+  当主键列不是表中的第一列的时候需要设置。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表。 -->
+  <!-- 7. useGeneratedKeys (可选配置， 默认为false)
+      （仅对 insert 和 update 有用）这会令 MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键
+      （比如：像 MySQL 和 SQL Server 这样的关系数据库管理系统的自动递增字段），默认值：false。  -->
+  <!-- 8. timeout  (可选配置， 默认为unset, 依赖驱动)
+       这个设置是在抛出异常之前，驱动程序等待数据库返回请求结果的秒数。默认值为 unset（依赖驱动）。 -->
+  <insert
+          id="insert"
+
+          parameterType="com.winterchen.model.UserDomain"
+          flushCache="true"
+          statementType="PREPARED"
+          keyProperty=""
+          keyColumn=""
+          useGeneratedKeys="false"
+          timeout="20"
+  >
+    INSERT INTO
+    t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      userName,password,
+      <if test="phone != null">
+        phone,
+      </if>
+    </trim>
+    <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+      #{userName, jdbcType=VARCHAR},#{password, jdbcType=VARCHAR},
+      <if test="phone != null">
+        #{phone, jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <!--查询，resultType：实体类的路径。id与dao接口的方法名一直，指定结果类型，和参数类型-->
+        <!--WHERE-->
+       <!--userId = 1003-->
+       <!--{userName,jdbcType=VARCHAR}||'%'-->
+      <!--从表中选择字段-->
+  <!--
+  asc:降序，从大到小
+  asc:升序，从小到大排序
+  -->
+  <select id="selectUsers" resultType="com.winterchen.model.UserDomain">
+
+      SELECT
+        <include refid="BASE_COLUMN"/>
+      FROM
+        <!--<include refid="BASE_TABLE"/>-->
+      t_user a
+      where 1 = 1
+    <if test="userName != null and userName != ''">
+       AND a.userName like #{userName}
+    </if>
+    <if test="phone != null and phone != ''">
+      AND a.phone like #{phone}
+    </if>
+    order by a.userId desc
+
+  </select>
+
+
+  <!--查询单条记录-->
+  <select id="selectOne" resultType="com.winterchen.model.UserDomain">
+
+    SELECT
+    <!--<include refid="BASE_COLUMN"/>-->
+    *
+    FROM
+    <!--<include refid="BASE_TABLE"/>-->
+    t_user
+    WHERE
+    userId = #{userId}
+
+  </select>
+
+  <!--删除单条记录-->
+  <delete id="delOne" parameterType="int">
+        delete from
+         t_user
+          where
+          userId = #{userId}
+    </delete>
+
+
+  <!--修改单条记录-->
+  <update id="updateOne" parameterType="com.winterchen.model.UserDomain">
+    update t_user set
+    <if test="userName!=null">userName =#{userName},</if>
+
+    <if test="password!=null">password = #{password},</if>
+
+    <if test="phone!=null">phone = #{phone}</if>
+
+
+
+    where userId = #{userId}
+
+  </update>
+
+
+
+</mapper>

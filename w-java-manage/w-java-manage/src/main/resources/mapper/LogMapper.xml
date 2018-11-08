@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--客户映射 调用dao层接口
+ 一个命名空间（namespace） 对应一个dao接口
+
+这个id也应该对应dao里面的某个方法（相当于方法的实现），因此id 应该与方法名一致
+ -->
+<mapper namespace="com.winterchen.dao.LogDao" >
+
+
+    <sql id="log">
+    log
+  </sql>
+
+
+
+
+    <insert id="insertLog" parameterType="com.winterchen.model.Log">
+    insert into log (
+    uuid,
+    res_url,
+    time,
+    req_url
+    )
+    value (
+    #{uuid},
+    #{resUrl},
+    #{time },
+    #{reqUrl}
+    )
+  </insert>
+
+
+    <select id="selectAllLog" resultType="com.winterchen.model.Log">
+
+        SELECT
+        *
+        FROM
+
+        log
+
+    </select>
+
+</mapper>

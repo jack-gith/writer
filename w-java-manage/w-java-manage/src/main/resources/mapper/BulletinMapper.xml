@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--
+******************************************************************************
+* 数据库表：w_bulletin
+* 表的名称：WBulletin
+* 对应实体：com.winterchen.entity.WBulletin
+* 开发日期：2018-11-02
+* 技术服务: 写手项目
+******************************************************************************
+-->
+<mapper namespace="com.winterchen.dao.BulletinDao">
+
+    <!--
+     **************************************************************************
+     * 定义ResultMap
+     * 注: 实现类的属性名和数据库列名一致
+     **************************************************************************
+     -->
+    <resultMap id="BaseResultMap" type="com.winterchen.model.Bulletin">
+        <!-- 主键 -->
+        <result column="id"  property="id" jdbcType="INTEGER" />
+        <!-- 内容 -->
+        <result column="content"  property="content" jdbcType="VARCHAR" />
+        <!-- 文章id -->
+        <result column="article_id"  property="articleId" jdbcType="INTEGER" />
+        <!-- 留言者用户id -->
+        <result column="user_id"  property="userId" jdbcType="INTEGER" />
+        <!-- 回复内容 -->
+        <result column="reply"  property="reply" jdbcType="VARCHAR" />
+        <!-- 创建时间 -->
+        <result column="create_time"  property="createTime" jdbcType="TIMESTAMP" />
+        <!-- 回复时间 -->
+        <result column="reply_time"  property="replyTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <!--
+    **************************************************************************
+    * 定义查询公用查询语句
+    * 注: 实现类的属性名和数据库列名一致
+    **************************************************************************
+    -->
+    <sql id="BaseWhereSql">
+        <if test='id != null'>
+            AND   tb.id = #{id}  /* 主键 */
+        </if>
+        <if test='content != null and content != "" and content != "null" and content != "undefined" '>
+            AND   tb.content = #{content}  /* 内容 */
+        </if>
+        <if test='articleId != null'>
+            AND   tb.article_id = #{articleId}  /* 文章id */
+        </if>
+        <!--<if test='userId != null'>-->
+            <!--AND   tb.user_id = #{userId}  /* 留言者用户id */-->
+        <!--</if>-->
+        <if test='reply != null and reply != "" and reply != "null" and reply != "undefined" '>
+            AND   tb.reply = #{reply}  /* 回复内容 */
+        </if>
+        <if test='createTime != null'>
+            AND   date_format(tb.create_time ,'%Y-%m-%d') = #{createTime}  /* 创建时间 */
+        </if>
+        <if test='replyTime != null'>
+            AND   date_format(tb.reply_time ,'%Y-%m-%d') = #{replyTime}  /* 回复时间 */
+        </if>
+
+        <!-- 常用自定义字段 -->
+
+        <if test='contentLike != null and contentLike != "" and contentLike != "null" and contentLike != "undefined" '>
+            AND   tb.content like concat('%',#{contentLike},'%')  /* 内容(全模糊) */
+        </if>
+        <if test='contentLeftLike != null and contentLeftLike != "" and contentLeftLike != "null" and contentLeftLike != "undefined" '>
+            AND   tb.content like concat(#{contentLeftLike},'%')  /* 内容 (左模糊)*/
+        </if>
+        <if test='contentRightLike != null and contentRightLike != "" and contentRightLike != "null" and contentRightLike != "undefined" '>
+            AND   tb.content like concat('%',#{contentRightLike})  /* 内容 (右模糊)*/
+        </if>
+        <if test='contentNotEqual != null and contentNotEqual != "" and contentNotEqual != "null" and contentNotEqual != "undefined" '>
+            AND   tb.content <![CDATA[<>]]> #{contentNotEqual}    /* 内容 (不等于)*/
+        </if>
+
+
+
+        <if test='replyLike != null and replyLike != "" and replyLike != "null" and replyLike != "undefined" '>
+            AND   tb.reply like concat('%',#{replyLike},'%')  /* 回复内容(全模糊) */
+        </if>
+        <if test='replyLeftLike != null and replyLeftLike != "" and replyLeftLike != "null" and replyLeftLike != "undefined" '>
+            AND   tb.reply like concat(#{replyLeftLike},'%')  /* 回复内容 (左模糊)*/
+        </if>
+        <if test='replyRightLike != null and replyRightLike != "" and replyRightLike != "null" and replyRightLike != "undefined" '>
+            AND   tb.reply like concat('%',#{replyRightLike})  /* 回复内容 (右模糊)*/
+        </if>
+        <if test='replyNotEqual != null and replyNotEqual != "" and replyNotEqual != "null" and replyNotEqual != "undefined" '>
+            AND   tb.reply <![CDATA[<>]]> #{replyNotEqual}    /* 回复内容 (不等于)*/
+        </if>
+
+
+        <if test='createTimeBegin != null'>
+            AND   tb.create_time <![CDATA[>=]]>  #{createTimeBegin}  /* 创建时间  (起始日期) */
+        </if>
+        <if test='createTimeEnd != null'>
+            AND   tb.create_time <![CDATA[<=]]>  #{createTimeEnd}  /* 创建时间  (结束日期) */
+        </if>
+
+        <if test='replyTimeBegin != null'>
+            AND   tb.reply_time <![CDATA[>=]]>  #{replyTimeBegin}  /* 回复时间  (起始日期) */
+        </if>
+        <if test='replyTimeEnd != null'>
+            AND   tb.reply_time <![CDATA[<=]]>  #{replyTimeEnd}  /* 回复时间  (结束日期) */
+        </if>
+    </sql>
+
+
+    <!--
+     **************************************************************************
+     * 1.新增一条数据
+     * 注: 根据Bean实体执行新增操作.
+     **************************************************************************
+     -->
+    <insert id="getInsert"
+            parameterType="com.winterchen.model.Bulletin"
+            useGeneratedKeys="true"
+            keyProperty="id">
+
+            INSERT   /* getInsert+@com.winterchen.entity.WBulletin */
+            INTO   w_bulletin          /* 留言表 */
+                    (
+                        id                      /* 主键 */
+                       ,content                 /* 内容 */
+                       ,article_id              /* 文章id */
+                       ,user_id                 /* 留言者用户id */
+                       ,reply                   /* 回复内容 */
+                       ,create_time             /* 创建时间 */
+                       ,reply_time              /* 回复时间 */
+                    )
+            VALUES  (
+                        #{id}   /* 主键 */
+                       ,#{content}   /* 内容 */
+                       ,#{articleId}   /* 文章id */
+                       ,#{userId}   /* 留言者用户id */
+                       ,#{reply}   /* 回复内容 */
+                       ,#{createTime}   /* 创建时间 */
+                       ,#{replyTime}   /* 回复时间 */
+                    )
+
+    </insert>
+
+
+
+    <!--
+    **************************************************************************
+    * 2.删除一条数据
+    * 注: 根据Bean实体的主键ID执行删除操作.
+    **************************************************************************
+    -->
+    <delete id="getDeleteById"
+            parameterType="java.lang.Integer"
+    >
+
+            DELETE   /* getDelete+@@com.winterchen.entity.WBulletin  */
+            FROM   w_bulletin                        /* 留言表 */
+            WHERE
+                  id =  #{_parameter} /* 主键  主键 */
+
+    </delete>
+
+    <delete id="getDeleteBean"
+            parameterType="com.winterchen.model.Bulletin">
+
+            DELETE   /* getDeleteBean+@com.winterchen.entity.WBulletin */
+            FROM   w_bulletin                  /* 留言表 */
+            WHERE   id =  #{id} /* 主键 主键 */
+    </delete>
+
+
+
+    <!--
+    **************************************************************************
+    * 3.变更一条数据
+    * 注: 根据Bean实体的主键ID执行变更操作.
+    **************************************************************************
+    -->
+    <update id="getUpdate"
+            parameterType="com.winterchen.model.Bulletin">
+
+        UPDATE   /* getUpdate+@com.winterchen.entity.WBulletin */
+        w_bulletin                         /* 留言表 */
+        SET
+        <if test='id != null'>
+            id =  #{id}  /* 主键 */
+        </if>
+        <if test='content != null and content != "" and content != "null" and content != "undefined" '>
+            ,content =  #{content}  /* 内容 */
+        </if>
+        <if test='articleId != null'>
+            ,article_id =  #{articleId}  /* 文章id */
+        </if>
+        <if test='userId != null'>
+            ,user_id =  #{userId}  /* 留言者用户id */
+        </if>
+        <if test='reply != null and reply != "" and reply != "null" and reply != "undefined" '>
+            ,reply =  #{reply}  /* 回复内容 */
+        </if>
+        <if test='createTime != null'>
+            ,create_time =  #{createTime}  /* 创建时间 */
+        </if>
+        <if test='replyTime != null'>
+            ,reply_time =  #{replyTime}  /* 回复时间 */
+        </if>
+        WHERE
+        id =  #{id}  /* 主键 */
+    </update>
+
+    <!--
+    **************************************************************************
+    * 4.获取一个Bean实体
+    * 注: 根据Bean实体的主键ID获取一个Bean实体.
+    **************************************************************************
+    -->
+    <select id="getBeanById"
+            parameterType="java.lang.Integer"
+            resultMap="BaseResultMap">
+
+            SELECT   /* getBean+@com.winterchen.entity.WBulletin */
+                     *
+             FROM   w_bulletin                         /*  */
+             WHERE
+                    id =  #{_parameter} /* 主键  主键 */
+    </select>
+
+    <!--
+    **************************************************************************
+    * 5.条件查询
+    * 注: 支持多条件查询、模糊查询、日期比较查询等操作.
+    **************************************************************************
+    -->
+    <select id="getList"
+            parameterType="com.winterchen.model.BulletinCode"
+            resultMap="BaseResultMap">
+
+        SELECT   /* getBean+@com.winterchen.entity.WBulletin */
+        *
+        FROM     w_bulletin           tb            /*  */
+        WHERE   1 = 1
+        <include refid="BaseWhereSql"/>
+
+        <if test='orderBy != null and orderBy != ""'>
+            ORDER BY  ${orderBy}  /* 排序 */
+        </if>
+
+    </select>
+
+    <select id="getListPrmMapRtnBean"
+            parameterType="java.util.HashMap"
+            resultMap="BaseResultMap">
+
+        SELECT   /* getBean+@com.winterchen.entity.WBulletin */
+        *
+        FROM     w_bulletin           tb            /*  */
+        WHERE   1 = 1
+        <include refid="BaseWhereSql"/>
+        <if test='orderBy != null and orderBy != ""'>
+            ORDER BY  create_time DESC  /* 排序 */
+        </if>
+
+
+    </select>
+
+    <select id="getListPrmMapRtnMap"
+            parameterType="java.util.HashMap"
+            resultType="java.util.HashMap">
+
+        SELECT   /* getBean+@com.winterchen.entity.WBulletin */
+        tb.id                   AS      "id" /* 主键 */
+        ,tb.content              AS      "content" /* 内容 */
+        ,tb.article_id           AS      "articleId" /* 文章id */
+        ,tb.user_id              AS      "userId" /* 留言者用户id */
+        ,tb.reply                AS      "reply" /* 回复内容 */
+        ,tb.create_time          AS      "createTime" /* 创建时间 */
+        ,tb.reply_time           AS      "replyTime" /* 回复时间 */
+        FROM     w_bulletin           tb            /*  */
+        WHERE   1 = 1
+        <include refid="BaseWhereSql"/>
+
+        <if test='orderBy != null and orderBy != ""'>
+            ORDER BY  ${orderBy}  /* 排序 */
+        </if>
+
+    </select>
+
+
+    <!--
+    **************************************************************************
+    * 6:获取查询总记录数
+    * 注: 支持分页查询、多条件查询、模糊查询、日期比较查询等操作.
+    **************************************************************************
+    -->
+    <select id="getQueryTotalNum"
+            parameterType="java.util.HashMap"
+            resultType="java.lang.Integer">
+
+        SELECT   /* getPageListTotalNum+@com.winterchen.entity.WBulletin */
+        COUNT(*)                             /*总条数 */
+        FROM     w_bulletin          tb            /*  */
+        WHERE   1 = 1
+
+        <include refid="BaseWhereSql"/>
+    </select>
+
+</mapper>

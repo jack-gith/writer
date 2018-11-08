@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--
+******************************************************************************
+* 数据库表：w_withdraw
+* 表的名称：Withdraw
+* 对应实体：com.winterchen.model.Withdraw
+* 开发日期：2018-10-30
+* 技术服务: 写手项目
+******************************************************************************
+-->
+<mapper namespace="com.winterchen.dao.WithdrawDao">
+
+   <!--
+    **************************************************************************
+    * 定义ResultMap
+    * 注: 实现类的属性名和数据库列名一致
+    **************************************************************************
+    -->
+    <resultMap id="BaseResultMap" type="com.winterchen.model.Withdraw">
+                   <!--  -->
+	               <result column="id"  property="id" jdbcType="INTEGER" />
+                   <!-- 提现金额 -->
+                   <result column="amount"  property="amount" jdbcType="DECIMAL" />
+                   <!-- 用户名 -->
+	               <result column="user_name"  property="userName" jdbcType="VARCHAR" />
+                   <!-- 角色 -->
+	               <result column="role"  property="role" jdbcType="VARCHAR" />
+                   <!-- 审核状态（0:待审核 1:通过 2:驳回） -->
+	               <result column="status"  property="status" jdbcType="INTEGER" />
+                   <!-- 提现(申请)时间 -->
+                   <result column="create_time"  property="createTime" jdbcType="TIMESTAMP" />
+                   <!-- 更新时间 -->
+                   <result column="update_time"  property="updateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	
+	<!--
+    **************************************************************************
+    * 定义查询公用查询语句
+    * 注: 实现类的属性名和数据库列名一致
+    **************************************************************************
+    -->
+	<sql id="BaseWhereSql">
+             <if test='id != null'>
+               AND   tb.id = #{id}  /*  */ 
+             </if>
+             <if test='amount != null'>
+               AND   tb.amount = #{amount}  /* 提现金额 */ 
+             </if>
+             <if test='userName != null and userName != "" and userName != "null" and userName != "undefined" '>
+               AND   tb.user_name = #{userName}  /* 用户名 */ 
+             </if>
+             <if test='role != null and role != "" and role != "null" and role != "undefined" '>
+               AND   tb.role = #{role}  /* 角色 */ 
+             </if>
+             <if test='status != null'>
+               AND   tb.status = #{status}  /* 审核状态（0:待审核 1:通过 2:驳回） */ 
+             </if>
+             <if test='createTime != null'>
+               AND   date_format(tb.create_time ,'%Y-%m-%d') = #{createTime}  /* 提现(申请)时间 */ 
+             </if>
+             <if test='updateTime != null'>
+               AND   date_format(tb.update_time ,'%Y-%m-%d') = #{updateTime}  /* 更新时间 */ 
+             </if>
+           
+             <!-- 常用自定义字段 -->    
+             
+             
+             <if test='userNameLike != null and userNameLike != "" and userNameLike != "null" and userNameLike != "undefined" '>
+               AND   tb.user_name like concat('%',#{userNameLike},'%')  /* 用户名(全模糊) */
+             </if>
+             <if test='userNameLeftLike != null and userNameLeftLike != "" and userNameLeftLike != "null" and userNameLeftLike != "undefined" '>
+               AND   tb.user_name like concat(#{userNameLeftLike},'%')  /* 用户名 (左模糊)*/
+             </if>
+             <if test='userNameRightLike != null and userNameRightLike != "" and userNameRightLike != "null" and userNameRightLike != "undefined" '>
+               AND   tb.user_name like concat('%',#{userNameRightLike})  /* 用户名 (右模糊)*/
+             </if>
+             <if test='userNameNotEqual != null and userNameNotEqual != "" and userNameNotEqual != "null" and userNameNotEqual != "undefined" '>
+               AND   tb.user_name <![CDATA[<>]]> #{userNameNotEqual}    /* 用户名 (不等于)*/
+             </if>
+             
+             <if test='roleLike != null and roleLike != "" and roleLike != "null" and roleLike != "undefined" '>
+               AND   tb.role like concat('%',#{roleLike},'%')  /* 角色(全模糊) */
+             </if>
+             <if test='roleLeftLike != null and roleLeftLike != "" and roleLeftLike != "null" and roleLeftLike != "undefined" '>
+               AND   tb.role like concat(#{roleLeftLike},'%')  /* 角色 (左模糊)*/
+             </if>
+             <if test='roleRightLike != null and roleRightLike != "" and roleRightLike != "null" and roleRightLike != "undefined" '>
+               AND   tb.role like concat('%',#{roleRightLike})  /* 角色 (右模糊)*/
+             </if>
+             <if test='roleNotEqual != null and roleNotEqual != "" and roleNotEqual != "null" and roleNotEqual != "undefined" '>
+               AND   tb.role <![CDATA[<>]]> #{roleNotEqual}    /* 角色 (不等于)*/
+             </if>
+             
+             
+             
+             <if test='createTimeBegin != null'>
+               AND   tb.create_time <![CDATA[>=]]>  #{createTimeBegin}  /* 提现(申请)时间  (起始日期) */
+             </if>
+             <if test='createTimeEnd != null'>
+               AND   tb.create_time <![CDATA[<=]]>  #{createTimeEnd}  /* 提现(申请)时间  (结束日期) */
+             </if>
+             
+             <if test='updateTimeBegin != null'>
+               AND   tb.update_time <![CDATA[>=]]>  #{updateTimeBegin}  /* 更新时间  (起始日期) */
+             </if>
+             <if test='updateTimeEnd != null'>
+               AND   tb.update_time <![CDATA[<=]]>  #{updateTimeEnd}  /* 更新时间  (结束日期) */
+             </if>
+         </sql>
+	
+    
+   <!--
+    **************************************************************************
+    * 1.新增一条数据
+    * 注: 根据Bean实体执行新增操作.
+    **************************************************************************
+    -->
+   <insert id="getInsert"
+            parameterType="com.winterchen.model.Withdraw"
+            useGeneratedKeys="true"
+            keyProperty="id">
+    
+            INSERT   /* getInsert+@com.winterchen.bean.Withdraw */
+            INTO   w_withdraw          /* 提现记录表 */
+                    (
+                        id                      /*  */
+                       ,amount                  /* 提现金额 */
+                       ,user_name               /* 用户名 */
+                       ,role                    /* 角色 */
+                       ,status                  /* 审核状态（0:待审核 1:通过 2:驳回） */
+                       ,create_time             /* 提现(申请)时间 */
+                       ,update_time             /* 更新时间 */
+                       ,openid
+                       ,phone
+                    )
+            VALUES  (
+                        #{id}   /*  */ 
+                       ,#{amount}   /* 提现金额 */ 
+                       ,#{userName}   /* 用户名 */ 
+                       ,#{role}   /* 角色 */ 
+                       ,#{status}   /* 审核状态（0:待审核 1:通过 2:驳回） */ 
+                       ,#{createTime}   /* 提现(申请)时间 */ 
+                       ,#{updateTime}   /* 更新时间 */
+                       ,#{openid}
+                       ,#{phone}
+                    )
+         
+    </insert>
+    
+    
+    
+    <!--
+    **************************************************************************
+    * 2.删除一条数据
+    * 注: 根据Bean实体的主键ID执行删除操作.
+    **************************************************************************
+    -->
+    <delete id="getDeleteById"
+            parameterType="java.lang.Integer"
+            >
+    
+            DELETE   /* getDelete+@@com.winterchen.bean.Withdraw  */
+            FROM   w_withdraw                        /* 提现记录表 */
+            WHERE   
+                  id =  #{_parameter} /* 主键   */
+
+    </delete>
+ 
+    <delete id="getDeleteBean"
+            parameterType="com.winterchen.model.Withdraw">
+            
+            DELETE   /* getDeleteBean+@com.winterchen.bean.Withdraw */
+            FROM   w_withdraw                  /* 提现记录表 */
+            WHERE   id =  #{id} /* 主键  */
+    </delete>
+    
+    
+    
+    <!--
+    **************************************************************************
+    * 3.变更一条数据
+    * 注: 根据Bean实体的主键ID执行变更操作.
+    **************************************************************************
+    -->
+    <update id="getUpdate"
+            parameterType="com.winterchen.model.Withdraw">
+    
+            UPDATE   /* getUpdate+@com.winterchen.bean.Withdraw */
+                     w_withdraw                         /* 提现记录表 */
+            SET
+			        <if test='id != null'>
+			         id =  #{id}  /*  */
+			        </if>
+			        <if test='amount != null'>
+			        ,amount =  #{amount}  /* 提现金额 */
+			        </if>
+			        <if test='userName != null and userName != "" and userName != "null" and userName != "undefined" '>
+			        ,user_name =  #{userName}  /* 用户名 */
+			        </if>
+			        <if test='role != null and role != "" and role != "null" and role != "undefined" '>
+			        ,role =  #{role}  /* 角色 */
+			        </if>
+			        <if test='status != null'>
+			        ,status =  #{status}  /* 审核状态（0:待审核 1:通过 2:驳回） */
+			        </if>
+		            <if test='createTime != null'>
+		            ,create_time =  #{createTime}  /* 提现(申请)时间 */
+		            </if>
+		            <if test='updateTime != null'>
+		            ,update_time =  #{updateTime}  /* 更新时间 */
+		            </if>
+            WHERE   
+                   id =  #{id}  /*  */
+    </update>
+    
+    <!--
+    **************************************************************************
+    * 4.获取一个Bean实体
+    * 注: 根据Bean实体的主键ID获取一个Bean实体.
+    **************************************************************************
+    -->
+    <select id="getBeanById"
+            parameterType="java.lang.Integer"
+            resultMap="BaseResultMap">
+    
+            SELECT   /* getBean+@com.winterchen.bean.Withdraw */
+                     *
+             FROM   w_withdraw                         /*  */
+             WHERE  
+                    id =  #{_parameter} /* 主键   */ 
+    </select>
+    
+    <!--
+    **************************************************************************
+    * 5.条件查询
+    * 注: 支持多条件查询、模糊查询、日期比较查询等操作.
+    **************************************************************************
+    -->
+    <select id="getList"
+            parameterType="com.winterchen.model.WithdrawCode"
+            resultMap="BaseResultMap">
+    
+            SELECT   /* getBean+@com.winterchen.bean.Withdraw */
+                     *
+            FROM     w_withdraw           tb            /*  */
+            WHERE   1 = 1
+             <include refid="BaseWhereSql"/>
+             
+             <if test='orderBy != null and orderBy != ""'>
+               ORDER BY  ${orderBy}  /* 排序 */ 
+             </if>
+
+    </select>
+    
+    <select id="getListPrmMapRtnBean"
+            parameterType="java.util.HashMap"
+            resultMap="BaseResultMap">
+    
+            SELECT   /* getBean+@com.winterchen.bean.Withdraw */
+                   *
+            FROM     w_withdraw           tb            /*  */
+            WHERE   1 = 1
+             <include refid="BaseWhereSql"/>
+             <if test='orderBy != null and orderBy != ""'>
+                ORDER BY  ${orderBy}  /* 排序 */
+             </if>
+
+         
+    </select>
+    
+    <select id="getListPrmMapRtnMap"
+            parameterType="java.util.HashMap"
+            resultType="java.util.HashMap">
+    
+            SELECT   /* getBean+@com.winterchen.bean.Withdraw */
+                        tb.id                   AS      "id" /*  */ 
+                       ,tb.amount               AS      "amount" /* 提现金额 */ 
+                       ,tb.user_name            AS      "userName" /* 用户名 */ 
+                       ,tb.role                 AS      "role" /* 角色 */ 
+                       ,tb.status               AS      "status" /* 审核状态（0:待审核 1:通过 2:驳回） */ 
+                       ,tb.create_time          AS      "createTime" /* 提现(申请)时间 */ 
+                       ,tb.update_time          AS      "updateTime" /* 更新时间 */ 
+            FROM     w_withdraw           tb            /*  */
+            WHERE   1 = 1
+             <include refid="BaseWhereSql"/>
+
+             <if test='orderBy != null and orderBy != ""'>
+                ORDER BY  ${orderBy}  /* 排序 */
+             </if>
+
+    </select>
+    
+   
+    <!--
+    **************************************************************************
+    * 6:获取查询总记录数
+    * 注: 支持分页查询、多条件查询、模糊查询、日期比较查询等操作.
+    **************************************************************************
+    -->
+    <select id="getQueryTotalNum"
+            parameterType="java.util.HashMap"
+            resultType="java.lang.Integer">
+    
+            SELECT   /* getPageListTotalNum+@com.winterchen.bean.Withdraw */
+                      COUNT(*)                             /*总条数 */ 
+            FROM     w_withdraw          tb            /*  */
+            WHERE   1 = 1
+
+            <include refid="BaseWhereSql"/>                 
+    </select>
+    
+</mapper>
